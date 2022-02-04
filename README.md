@@ -6,6 +6,8 @@ graphs by Dask itself.  It is also possible to create and compute your own graph
 Dask can be used for out-of-core computations on very large data sets, stored in
 CSV or HDF5 files.
 
+These files are copied from https://github.com/gjbex/Python-for-HPC/tree/master/source-code/dask
+
 # What is it?
 * `create_csv_data.py`: non-Dask script to generate a large CSV data set for
     experimenting with Dask.
@@ -31,3 +33,20 @@ CSV or HDF5 files.
     on `numpy` arrays.
 * `dask_sum_aarays.pbs`: PBS script to execute `dask_sum_aarays.py`.
 * `julia_set`: example of combining Cython and dask.
+
+* [etijskens] `setenv.sh` bash script for adding the location of `path/to/your/miniconda3/bin` to the 
+  `PATH` environment variable
+
+# adapting the scripts to your environment [etijskens]
+
+* in `setenv.sh` make sure that the `path/to/your/miniconda3/bin` location is prepended to the `PATH` 
+  environment variable.
+
+* in `launch_scheduler.sh` and `launch_worker.sh` make sure that 
+    
+  1. `setenv.sh` is sourced. You must specify the full path!
+
+  2. the correct conda environment is activated. Obviously this environment must be part of the 
+     `miniconda3` installation referred to in `setenv.sh`. 
+
+

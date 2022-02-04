@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-source "${VSC_DATA}/vmm/miniconda3/setenv.sh"
+source "${VSC_SCRATCH}/daskexamples/setenv.sh"
 source activate elmo-env 2> /dev/null
 if [ $? -ne 0 ]
 then
