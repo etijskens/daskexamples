@@ -39,14 +39,20 @@ These files are copied from https://github.com/gjbex/Python-for-HPC/tree/master/
 
 # adapting the scripts to your environment [etijskens]
 
-* in `setenv.sh` make sure that the `path/to/your/miniconda3/bin` location is prepended to the `PATH` 
+* In `setenv.sh` make sure that the `path/to/your/miniconda3/bin` location is prepended to the `PATH` 
   environment variable.
 
-* in `launch_scheduler.sh` and `launch_worker.sh` make sure that 
+* In `launch_scheduler.sh` and `launch_worker.sh` make sure that 
     
   1. `setenv.sh` is sourced. You must specify the full path!
 
   2. the correct conda environment is activated. Obviously this environment must be part of the 
      `miniconda3` installation referred to in `setenv.sh`. 
 
+* The `.pbs` job scripts pass the scheduler_node and the scheduler_port to the python script
+  via command line arguments. Since they are in fact also stored in environment variables, 
+  you might as well retrieve them in the python script as 
 
+      import os
+      scheduler_node = os.environ['scheduler_node']
+      scheduler_port = os.environ['scheduler_port']
