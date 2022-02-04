@@ -49,6 +49,9 @@ These files are copied from https://github.com/gjbex/Python-for-HPC/tree/master/
   2. the correct conda environment is activated. Obviously this environment must be part of the 
      `miniconda3` installation referred to in `setenv.sh`. 
 
+* In each `.pbs` job script, make sure that the correct `setenv.sh` is sourced and that
+  the correct conda environment is activated. 
+
 * The `.pbs` job scripts pass the scheduler_node and the scheduler_port to the python script
   via command line arguments. Since they are in fact also stored in environment variables, 
   you might as well retrieve them in the python script as 
